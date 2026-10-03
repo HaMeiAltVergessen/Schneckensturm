@@ -8,6 +8,7 @@
 #   assets/garden/<building>_2/_3.png building upgrade levels
 #   assets/ui/icon_<ability id>.png   ability button icon
 #   assets/ui/bg_<dialog id>.jpg      dialog background from line 1, bg_<dialog id>_<n> from line n
+#   assets/ui/bg_battle_gar_l<n>.jpg  battle background of level n
 #   assets/tiles/gar_l<n>_tiles.png   level tileset (built by process_art)
 #   assets/app/icon*.png              project + Android launcher icons
 extends SceneTree
@@ -60,6 +61,7 @@ func _initialize() -> void:
 		if changed:
 			_save(d, path)
 	_tilesets()
+	_battle_backgrounds()
 	_app_icon()
 	print("LINK_ART_DONE linked=%d" % linked)
 	quit(0)
@@ -99,6 +101,13 @@ func _tilesets() -> void:
 		layout.tileset = load(TILESET % n)
 		_save(layout, LAYOUT % n)
 		linked += 1
+
+
+func _battle_backgrounds() -> void:
+	for n in range(1, 4):
+		var layout: MapLayout = load(LAYOUT % n)
+		if _link(layout, "background", _background("bg_battle_gar_l%d" % n)):
+			_save(layout, LAYOUT % n)
 
 
 # Project icon (window/taskbar, Windows .exe) + Android launcher icons.

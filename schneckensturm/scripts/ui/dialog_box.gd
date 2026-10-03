@@ -22,7 +22,7 @@ func _ready() -> void:
 
 	# Anchor the box to the lower part of the screen.
 	var panel := PanelContainer.new()
-	panel.add_theme_stylebox_override("panel", UITheme.stylebox(UITheme.PANEL, UITheme.ACCENT, 2))
+	panel.add_theme_stylebox_override("panel", UITheme.stylebox(Color(UITheme.PANEL, 0.5), UITheme.ACCENT, 2))
 	panel.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	panel.offset_top = -250
 	panel.offset_left = 160

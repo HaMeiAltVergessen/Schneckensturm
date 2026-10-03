@@ -28,7 +28,7 @@ Politur zuletzt. **Owner:** 🤖 Claude (Code/Tests/Docs) · 🧑 Sebastian (Bil
 - [x] 🧑 Bilder nach `ASSETS.md` generieren → `art_raw/` → `bash tools/art.sh` (35 Bilder eingespielt; Boden-Kacheln verworfen → Platzhalter-Tileset)
 - [ ] 🧑 Story-Entwurf in `STORY.md` prüfen, Geburtstagsgruß (`CREDITS_LINE_2..4`) schreiben
 - [ ] 🧑 Playtest am PC und auf dem Handy → 🤝 Balancing nachziehen
-- [ ] 🤖 Windows-.exe + Android-APK bauen, auf dem Handy testen
+- [x] 🤖 Windows-.exe + Android-APK bauen (2026-10-03) · [ ] 🧑 auf dem Handy testen
 - [ ] 🤖 Politur nach Playtest (z. B. Tutorial-Hinweise in L1, Kamera-Startausschnitt auf die Dahlie)
 
 ## Ideen für später (nicht im Plan)

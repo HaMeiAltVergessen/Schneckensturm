@@ -20,6 +20,7 @@ var dahlias: Array[DahliaVisual] = []
 
 func start(p_sim: MatchSim) -> void:
 	sim = p_sim
+	_add_background(sim.layout.background)
 	map = MapView.new()
 	add_child(map)
 	map.build(sim.layout)
@@ -39,6 +40,28 @@ func start(p_sim: MatchSim) -> void:
 	sim.ability_used.connect(_on_ability_used)
 	sim.lives_changed.connect(_on_lives_changed)
 	_place_dahlias()
+
+
+# Screen-fixed level picture behind the map (stays put while the camera pans/zooms),
+# slightly dimmed so tokens stay readable.
+func _add_background(tex: Texture2D) -> void:
+	if tex == null:
+		return
+	var layer := CanvasLayer.new()
+	layer.layer = -1
+	add_child(layer)
+	var root := Control.new()
+	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	UITheme.fill(root)
+	layer.add_child(root)
+	var pic := TextureRect.new()
+	pic.texture = tex
+	pic.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	pic.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	pic.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	UITheme.fill(pic)
+	root.add_child(pic)
+	root.add_child(UITheme.background(Color(0, 0, 0, 0.25)))
 
 
 # One dahlia at every distinct path end (paths that meet share it).

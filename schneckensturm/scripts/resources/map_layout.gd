@@ -21,6 +21,8 @@ extends Resource
 @export var hero_limit: int = 4
 ## Optional tileset for reskins; null = placeholder tileset.
 @export var tileset: TileSet
+## Optional battle background (screen-fixed behind the map); null = plain color.
+@export var background: Texture2D
 
 
 func in_bounds(c: Vector2i) -> bool:

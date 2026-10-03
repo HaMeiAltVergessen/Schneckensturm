@@ -248,6 +248,26 @@ Cozy cartoon storybook illustration of a bright sunny morning in a cozy bedroom:
 Cozy cartoon storybook illustration, warm morning sunlight on a bedside table: the coral-pink dahlia in full bloom in its terracotta pot with a happy face, a tiny wooden bow and quiver leaning against the pot, a small rose bush and rosehip shrub with cute eyes celebrating, colorful confetti and a small birthday candle, a slime trail leading out of the open window towards a vegetable garden. Calm composition with an open, softly lit center. Clean bold outlines, soft cel shading, warm golden light, vibrant colors, no text, no watermark.
 ```
 
+#### Kampf-Hintergründe
+Liegen im Kampf **bildschirmfest hinter der Karte** (leicht abgedunkelt). Die Iso-Karte bedeckt als Raute die
+**Bildmitte** → Mitte ruhig, gleichmäßig und ohne Objekte; Deko nur an Rändern und in den Ecken.
+Blick leicht von oben, passend zum Boden des Levels. 1344 × 768. Werden automatisch in `MapLayout.background` verdrahtet.
+
+**`bg_battle_gar_l1.png`** — Level 1: Die Fensterbank
+```
+Cozy cartoon storybook illustration, high-angle view looking down onto a wide white painted wooden windowsill at night from toy-size perspective, the flat sill surface fills the whole frame with soft brush strokes and subtle wood grain. Only along the edges and in the corners: the bottom of a tall window frame with an open window at the top edge showing a starry night sky and a big moon, terracotta flower pots with rich soil and small green sprouts in the left and right corners, a few pebbles, glistening silvery snail slime trails creeping in from the top edge. The large center of the image is calm, even and completely empty. Clean bold outlines, soft cel shading, cool blue moonlight with warm accents, vibrant colors, no characters, no text, no watermark.
+```
+
+**`bg_battle_gar_l2.png`** — Level 2: Die Teppichlandschaft
+```
+Cozy cartoon storybook illustration, high-angle view looking down onto a vast soft wool rug at night from toy-size perspective, the rug with a cozy deep red and cream folk pattern and visible soft pile fills the whole frame. Only along the edges and in the corners: giant wooden chair legs rising like tree trunks, mountains of crumpled colorful knitted socks, a toppled toy wooden block, a marble and a crayon as huge landmarks, faint glossy slime trails crossing in from the edges. The large center of the image is calm, even and completely empty. Clean bold outlines, soft cel shading, cool blue moonlight with warm accents, vibrant colors, no characters, no text, no watermark.
+```
+
+**`bg_battle_gar_l3.png`** — Level 3: Showdown auf dem Nachttisch (Boss)
+```
+Cozy cartoon storybook illustration, high-angle view looking down onto the top of a dark polished walnut bedside table at night from toy-size perspective, the smooth wood with a white crocheted lace doily fills the whole frame. Only along the edges and in the corners: a towering stack of old books with gold embossed spines, a giant brass alarm clock, the base of a bedside lamp, the table edge dropping into a dark abyss at the bottom corners, a dramatic beam of cold moonlight falling across the scene, dark slime trails creeping over the table edge. The large center of the image is calm, even and completely empty. Epic but cute boss mood, clean bold outlines, soft cel shading, cold blue moonlight with a faint purple glow, no characters, no text, no watermark.
+```
+
 ### 4.6 Icons → `art_raw/icons/`
 Werden 128 px klein, deshalb **ein** klares Objekt mit dicken Umrissen und ohne Details. 1024 × 1024.
 
@@ -324,7 +344,10 @@ Empfohlene Reihenfolge, jede Stufe macht das Spiel sichtbar schöner:
 - [ ] `tile_l2_ground` · [ ] `tile_l2_path` · [ ] `tile_l2_blocked`
 - [ ] `tile_l3_ground` · [ ] `tile_l3_path` · [ ] `tile_l3_blocked`
 
-Insgesamt 44 Bilder.
+**E – Kampf-Hintergründe (3)**
+- [x] `bg_battle_gar_l1` · [x] `bg_battle_gar_l2` · [x] `bg_battle_gar_l3`
+
+Insgesamt 47 Bilder.
 
 **Dialog-Hintergründe wechseln:** `bg_<dialog-id>` gilt ab Zeile 1, `bg_<dialog-id>_<n>` ab Zeile n.
 Für weitere Wechsel einfach ein Bild mit Zeilennummer dazulegen, z. B. `bg_gar_l3_pre_3.png`.

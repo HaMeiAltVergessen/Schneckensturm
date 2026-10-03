@@ -50,7 +50,7 @@ Jede neue Mechanik bekommt einen Headless-Test. Tests schreiben nie in den echte
 
 Bilder: Rohbild nach `art_raw/<kategorie>/` (Namen und Prompts in `ASSETS.md`), dann `bash tools/art.sh`
 (freistellen → importieren → verdrahten; Bild-Felder: `token`, `portrait`, `texture`, `AbilityData.icon`,
-`DialogLine.background`, `MapLayout.tileset`). Fehlende Bilder = Platzhalter, nie ein Fehler. Content neu erzeugen:
+`DialogLine.background`, `MapLayout.tileset`, `MapLayout.background`). Fehlende Bilder = Platzhalter, nie ein Fehler. Content neu erzeugen:
 `--headless --script res://tools/gen_schneckensturm_content.gd` (überschreibt nichts Bestehendes; `-- --force` erzwingt).
 
 ## Performance-Budget
