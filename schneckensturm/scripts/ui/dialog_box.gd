@@ -5,6 +5,8 @@ class_name DialogBox
 extends Control
 
 signal finished
+## Emitted whenever a line is shown (the dialog scene swaps its background on it).
+signal line_shown(line: DialogLine)
 
 var _dialog: DialogData
 var _index := 0
@@ -40,7 +42,7 @@ func _ready() -> void:
 	var head := HBoxContainer.new()
 	head.add_theme_constant_override("separation", 12)
 	_portrait = TextureRect.new()
-	_portrait.custom_minimum_size = Vector2(72, 72)
+	_portrait.custom_minimum_size = Vector2(104, 104)
 	_portrait.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 	_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	head.add_child(_portrait)
@@ -91,6 +93,7 @@ func _show_line() -> void:
 	_text.text = tr(line.text_key)
 	_portrait.texture = line.portrait
 	_portrait.visible = line.portrait != null
+	line_shown.emit(line)
 
 
 func _advance() -> void:

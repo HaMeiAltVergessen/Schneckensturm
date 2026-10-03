@@ -15,9 +15,11 @@ Klon von „Talathons Fall“ (Meta-Schicht – Basis, Ausrüstung, Loot, Idle, 
 | `scenes/<name>/` | je Szene `<name>.tscn` + `<name>.gd`; UI wird im Code gebaut (`UITheme`) |
 | `data/<typ>/` | **Content als `.tres`** — wird von `ContentDB` per Ordner-Scan geladen, nie im Code gebaut |
 | `data/rules/` | `target_rules.tres` (Zielregel-Matrix), `balance.tres` (globale Balancing-Regler) |
-| `assets/` | Grafik (`garden/` echte Bilder, `units/` Platzhalter, `tiles/`, `shaders/`, `ui/`) |
+| `assets/` | Grafik (`garden/` Figuren/Gebäude/Dahlie, `ui/` Hintergründe + Icons, `tiles/`, `app/` App-Icons, `units/` Platzhalter, `shaders/`) |
+| `art_raw/` | Flux-Rohbilder nach Kategorie (`.gdignore`, nicht importiert) → `tools/art.sh` |
 | `addons/talathon_editor/` | Map- und Wellen-Editor |
-| `tools/` | `gen_schneckensturm_content.gd` (Content-Generator), `link_art.gd` (Bilder verdrahten) |
+| `addons/chroma_key/` | Projektunabhängiges Freistell-Plugin (`ChromaKey`, Editor-Dialog, Headless-CLI) |
+| `tools/` | `gen_schneckensturm_content.gd` (Content-Generator), `art.sh` → `process_art.gd` (Rohbilder freistellen/skalieren, `IsoTiles`) + `link_art.gd` (verdrahten) |
 | `tests/` | Headless-Test-Szenen (`*_test.tscn`) + `run_tests.sh`; `tests/tmp/` = Screenshot-Helfer, kein Test |
 
 ## Namen
@@ -41,13 +43,14 @@ Klon von „Talathons Fall“ (Meta-Schicht – Basis, Ausrüstung, Loot, Idle, 
 bash tests/run_tests.sh              # alle Suiten, Godot-Pfad per GODOT=... überschreibbar
 "E:/Godot/Godot_v4.4-stable_win64_console.exe" --headless --path . res://tests/match_test.tscn
 ```
-Suiten: `match_test` (Kampfregeln inkl. Leinen los, Heilen, Brut, Balance), `save_test` (Fortschritt),
+Suiten: `match_test` (Kampfregeln inkl. Leinen los, Heilen, Brut, Balance), `save_test` (Fortschritt), `chroma_key_test` (Freistellen, Iso-Kacheln),
 `content_loc_test`, `content_sim_test` (Bot muss **jedes** Level gewinnen), `validator_test`, `editor_test`,
 `scene_harness` (jede Szene instanziiert), `loc_test.gd` (Script-Modus).
 Jede neue Mechanik bekommt einen Headless-Test. Tests schreiben nie in den echten Spielstand.
 
-Nach neuen/umbenannten Assets einmal `--headless --import` laufen lassen, Bilder dann mit
-`--headless --script res://tools/link_art.gd` verdrahten. Content neu erzeugen:
+Bilder: Rohbild nach `art_raw/<kategorie>/` (Namen und Prompts in `ASSETS.md`), dann `bash tools/art.sh`
+(freistellen → importieren → verdrahten; Bild-Felder: `token`, `portrait`, `texture`, `AbilityData.icon`,
+`DialogLine.background`, `MapLayout.tileset`). Fehlende Bilder = Platzhalter, nie ein Fehler. Content neu erzeugen:
 `--headless --script res://tools/gen_schneckensturm_content.gd` (überschreibt nichts Bestehendes; `-- --force` erzwingt).
 
 ## Performance-Budget

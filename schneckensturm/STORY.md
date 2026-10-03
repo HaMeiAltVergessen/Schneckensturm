@@ -26,4 +26,4 @@ Sprecher-Keys: `DIALOG_SPEAKER_NARRATOR` (Erzähler), `DIALOG_SPEAKER_MOM` (Mama
 ## 🧑 Offen
 - **Geburtstagsgruß** für `CREDITS_LINE_2..4` (aktuell `[PH]`).
 - Insider/Anspielungen nach Wunsch in die Dialogzeilen einbauen.
-- Womit schießt Christina? (Schleuder, Gießkanne, Blasrohr …) → passt Bild und ggf. Texte an.
+- ~~Womit schießt Christina?~~ Entschieden: Pfeil und Bogen, unendlich viele Pfeile.

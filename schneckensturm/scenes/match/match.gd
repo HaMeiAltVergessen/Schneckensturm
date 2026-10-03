@@ -20,6 +20,7 @@ var _selected: Object = null
 
 var _res_label: Label
 var _lives_label: Label
+var _res_icon := false   # resource icon art present → plain number
 var _wave_label: Label
 var _next_btn: Button
 var _speed_btn: Button
@@ -248,8 +249,10 @@ func _build_hud() -> void:
 	top.add_child(row)
 	_pause_btn = _small_button("II", _toggle_pause)
 	row.add_child(_pause_btn)
+	_res_icon = _hud_icon(row, "resource")
 	_res_label = UITheme.label("", 26, Color(0.55, 0.85, 1.0))
 	row.add_child(_res_label)
+	_hud_icon(row, "petal")
 	_lives_label = UITheme.label("", 26, Color(1.0, 0.45, 0.45))
 	row.add_child(_lives_label)
 	_wave_label = UITheme.label("", 24)
@@ -387,7 +390,7 @@ func _make_card(id: String, title: String, tex: Texture2D, cost: int, card: Dict
 
 
 func _update_hud() -> void:
-	_res_label.text = "◆ %d" % sim.resource_int()
+	_res_label.text = ("%d" if _res_icon else "◆ %d") % sim.resource_int()
 	_lives_label.text = tr("UI_PETALS") % [sim.lives, sim.max_lives]
 	if _boss != null:
 		_boss_bar.value = _boss.hp_ratio() if _boss.alive else 0.0
@@ -441,13 +444,13 @@ func _rebuild_selection_panel() -> void:
 		var abilities: Array = sim.heroes[u.hero_id]["abilities"]
 		for i in abilities.size():
 			var ab: AbilityData = abilities[i]
-			var b := UITheme.button(tr(ab.name_key), 20)
+			var b := _icon_button(UITheme.button(tr(ab.name_key), 20), ab.icon)
 			b.tooltip_text = tr(ab.desc_key)
 			var idx := i
 			b.pressed.connect(func(): sim.trigger_hero_ability(u.hero_id, idx))
 			b.set_meta("ability", idx)
 			_sel_buttons.add_child(b)
-		var heal := UITheme.button("", 20)
+		var heal := _icon_button(UITheme.button("", 20), UITheme.icon("heal"))
 		heal.pressed.connect(func(): _heal(u.hero_id))
 		heal.set_meta("heal", true)
 		_sel_buttons.add_child(heal)
@@ -458,7 +461,7 @@ func _rebuild_selection_panel() -> void:
 		var bl: SimBuilding = _selected
 		_sel_title.text = tr(bl.data.name_key)
 		if bl.is_tower and bl.data.ability != null:
-			var b := UITheme.button(tr(bl.data.ability.name_key), 20)
+			var b := _icon_button(UITheme.button(tr(bl.data.ability.name_key), 20), bl.data.ability.icon)
 			b.tooltip_text = tr(bl.data.ability.desc_key)
 			b.pressed.connect(func(): sim.trigger_tower_ability(bl))
 			b.set_meta("tower", true)
@@ -659,3 +662,26 @@ func _swatch(c: Color) -> Texture2D:
 	var img := Image.create(48, 48, false, Image.FORMAT_RGBA8)
 	img.fill(c)
 	return ImageTexture.create_from_image(img)
+
+
+# Small HUD picture (assets/ui/icon_<name>.png) in front of a top-bar value; false if no art yet.
+func _hud_icon(row: Control, icon_name: String) -> bool:
+	var tex := UITheme.icon(icon_name)
+	if tex == null:
+		return false
+	var r := TextureRect.new()
+	r.texture = tex
+	r.custom_minimum_size = Vector2(36, 36)
+	r.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	r.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	r.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(r)
+	return true
+
+
+func _icon_button(b: Button, tex: Texture2D) -> Button:
+	if tex != null:
+		b.icon = tex
+		b.expand_icon = false
+		b.add_theme_constant_override("icon_max_width", 36)
+	return b

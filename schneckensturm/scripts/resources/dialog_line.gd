@@ -6,3 +6,4 @@ extends Resource
 @export var speaker_name_key: String = ""   # tr() key for the speaker's name
 @export var text_key: String = ""            # tr() key for the spoken line
 @export var portrait: Texture2D              # optional; hidden when null
+@export var background: Texture2D            # optional full-screen picture from this line on (null = keep the previous one)

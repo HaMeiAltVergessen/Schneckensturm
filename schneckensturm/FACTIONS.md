@@ -6,8 +6,8 @@ Werte stehen in den `.tres` unter `data/` (Balancing: `docs/BALANCING.md`), Name
 ## Christinas Garten (`garden`, Spieler)
 | ID | Was | Rolle |
 |---|---|---|
-| `gar_christina` | Christina – einzige Heldin | Fernkampf auf blauen Randfeldern, Reichweite 3. **Fällt sie, ist das Level verloren**; im Auswahlpanel für Ressourcen heilbar |
-| `leinen_los` | Fähigkeit „Leinen los!“ | trifft **alle** Schnecken auf der Karte (3× Angriff), Abklingzeit 45 s |
+| `gar_christina` | Christina – einzige Heldin | Bogenschützin (unendlich Pfeile) auf blauen Randfeldern, Reichweite 3. **Fällt sie, ist das Level verloren**; im Auswahlpanel für Ressourcen heilbar |
+| `leinen_los` | Fähigkeit „Leinen los!“ | Pfeilhagel, trifft **alle** Schnecken auf der Karte (3× Angriff), Abklingzeit 45 s |
 | `gar_rose_bush` → `gar_rose` | Rosenbusch (Kaserne) → Rosenkriegerinnen | 2 Nahkämpferinnen blockieren den Pfad, wachsen nach 12 s nach; 3 Stufen |
 | `gar_rosehip` | Hagebuttenstrauch (Turm) | Einzelziel, Reichweite 3,5; Fähigkeit *Hagebuttenhagel* (Flächenschaden); 3 Stufen |
 | Dahlie | Ziel | 10 Blüten (= Leben) je Level |

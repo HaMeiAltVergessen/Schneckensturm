@@ -16,6 +16,11 @@ Talathon-Editor „Schnelltest ▶".
 **Steuerung:** Tippen/Linksklick = auswählen und setzen · lange drücken/Rechtsklick = Christina zurückziehen ·
 Ziehen = Kamera bewegen · Pinch/Mausrad = Zoom. Christina antippen → „Leinen los!“, Heilen, Rückzug.
 
+## Bilder
+Flux-Rohbilder nach `art_raw/<kategorie>/` legen (Liste + Prompts: [`ASSETS.md`](ASSETS.md)), dann
+`bash tools/art.sh` – stellt frei, skaliert, baut Kacheln/Icons und verdrahtet alles.
+Das Freistell-Plugin `addons/chroma_key/` ist projektunabhängig (eigene `README.md`).
+
 ## Builds
 Voraussetzung: Export-Templates 4.4 (Editor → *Export-Vorlagen verwalten*), für Android zusätzlich
 Android-SDK + JDK 17 in den Editor-Einstellungen (*Export → Android*).

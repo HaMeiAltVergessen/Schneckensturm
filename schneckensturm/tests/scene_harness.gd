@@ -18,7 +18,33 @@ func _run() -> void:
 	for m in GameState.maps():
 		GameState.mark_cleared(m)
 	await _try_scene(SceneRouter.SCENES["level_select"], "level_select (all cleared)")
+	await _test_dialog_backgrounds()
 	_test_story_dialogs()
+
+
+# Lines with a background picture swap it (cross-fade), lines without keep it.
+func _test_dialog_backgrounds() -> void:
+	var tex := ImageTexture.create_from_image(Image.create(16, 9, false, Image.FORMAT_RGBA8))
+	var d := DialogData.new()
+	d.id = "harness_bg"
+	for i in 2:
+		var l := DialogLine.new()
+		l.speaker_name_key = "DIALOG_SPEAKER_NARRATOR"
+		l.text_key = "DIALOG_GAR_INTRO_1"
+		l.background = tex if i == 0 else null
+		d.lines.append(l)
+	GameState.pending_dialog = d
+	var inst: Control = load(SceneRouter.SCENES["dialog"]).instantiate()
+	add_child(inst)
+	await get_tree().process_frame
+	expect(inst._bg.texture == tex, "dialog shows the line's background")
+	for c in inst.get_children():
+		if c is DialogBox:
+			c._advance()
+	expect(inst._bg.texture == tex, "a line without background keeps the previous one")
+	inst.queue_free()
+	GameState.pending_dialog = null
+	await get_tree().process_frame
 
 
 # Every level except the first has a post-dialog chain that ends in the credits.

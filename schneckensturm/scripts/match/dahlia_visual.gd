@@ -7,6 +7,8 @@ extends Node2D
 
 const STAGE_PATH := "res://assets/garden/dahlia_%d.png"
 const STAGES := 4
+## On-screen height of the stage art (any source size is scaled to it; the pot stands on the tile).
+const DISPLAY_HEIGHT := 150.0
 const PETAL_COLOR := Color(0.93, 0.36, 0.55)
 const PETAL_DARK := Color(0.72, 0.18, 0.38)
 const CENTER_COLOR := Color(0.98, 0.80, 0.30)
@@ -26,7 +28,10 @@ func _ready() -> void:
 			_stages.append(load(p))
 	if _stages.size() == STAGES:
 		_sprite = Sprite2D.new()
-		_sprite.offset = Vector2(0, -_stages[0].get_height() * 0.5 + 16)
+		_sprite.centered = false
+		var s := DISPLAY_HEIGHT / maxf(1.0, _stages[0].get_height())
+		_sprite.scale = Vector2(s, s)
+		_sprite.position = Vector2(-_stages[0].get_width() * s * 0.5, 16.0 - DISPLAY_HEIGHT)
 		add_child(_sprite)
 	_refresh()
 

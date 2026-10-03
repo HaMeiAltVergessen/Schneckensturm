@@ -111,16 +111,51 @@ static func header(title_text: String, back_key := "main_menu") -> HBoxContainer
 	return row
 
 
-# Standard full-screen scaffold: background + margin + vbox. Returns the vbox.
-static func screen(root: Control, sep := 12) -> VBoxContainer:
+# Standard full-screen scaffold: background (+ optional picture, see backdrop()) + margin + vbox.
+static func screen(root: Control, sep := 12, picture := "") -> VBoxContainer:
 	fill(root)
 	root.add_child(background())
+	if picture != "":
+		var bg := backdrop(picture)
+		if bg != null:
+			root.add_child(bg)
 	var m := margin(20)
 	fill(m)
 	root.add_child(m)
 	var vb := vbox(sep)
 	m.add_child(vb)
 	return vb
+
+
+# Full-screen picture assets/ui/<name>.jpg|.png (cover, darkened by `dim` so text
+# stays readable); null when the art is not there yet.
+static func backdrop(name: String, dim := 0.45) -> Control:
+	var tex := ui_texture(name)
+	if tex == null:
+		return null
+	var r := TextureRect.new()
+	r.texture = tex
+	r.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	r.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	r.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	fill(r)
+	var shade := background(Color(0, 0, 0, dim))
+	r.add_child(shade)
+	return r
+
+
+# assets/ui/<name>.jpg or .png, or null.
+static func ui_texture(name: String) -> Texture2D:
+	for ext in ["jpg", "png"]:
+		var p := "res://assets/ui/%s.%s" % [name, ext]
+		if ResourceLoader.exists(p):
+			return load(p)
+	return null
+
+
+# HUD icon assets/ui/icon_<name>.png (petal, resource, heal …), or null.
+static func icon(name: String) -> Texture2D:
+	return ui_texture("icon_" + name)
 
 
 # Card-like toggle button: clear selected state (accent border) and a fixed-size icon.

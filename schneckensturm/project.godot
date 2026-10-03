@@ -39,7 +39,7 @@ window/handheld/orientation=4
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/talathon_editor/plugin.cfg")
+enabled=PackedStringArray("res://addons/chroma_key/plugin.cfg", "res://addons/talathon_editor/plugin.cfg")
 
 [input_devices]
 

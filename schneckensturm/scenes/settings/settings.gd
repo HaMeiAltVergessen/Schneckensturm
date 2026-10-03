@@ -3,7 +3,7 @@ extends Control
 
 
 func _ready() -> void:
-	var vb := UITheme.screen(self, 14)
+	var vb := UITheme.screen(self, 14, "menu_bg")
 	vb.add_child(UITheme.header(tr("UI_SETTINGS"), "main_menu"))
 
 	var grid := GridContainer.new()

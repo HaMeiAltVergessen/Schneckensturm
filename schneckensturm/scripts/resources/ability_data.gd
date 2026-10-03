@@ -19,3 +19,5 @@ extends Resource
 @export var cooldown: float = 20.0
 @export var summon_unit: UnitData
 @export var summon_count: int = 0
+## Optional button icon (assets/ui/icon_<id>.png, wired by tools/link_art.gd).
+@export var icon: Texture2D

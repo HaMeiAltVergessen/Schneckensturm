@@ -2,19 +2,13 @@
 extends Control
 
 const LINE_KEYS := ["CREDITS_LINE_1", "CREDITS_LINE_2", "CREDITS_LINE_3", "CREDITS_LINE_4"]
-const BACKGROUND := "res://assets/ui/credits_bg.png"
 
 
 func _ready() -> void:
 	UITheme.fill(self)
 	add_child(UITheme.background(Color(0.10, 0.05, 0.10)))
-	if ResourceLoader.exists(BACKGROUND):
-		var bg := TextureRect.new()
-		bg.texture = load(BACKGROUND)
-		bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-		bg.modulate = Color(1, 1, 1, 0.45)
-		UITheme.fill(bg)
+	var bg := UITheme.backdrop("credits_bg", 0.5)
+	if bg != null:
 		add_child(bg)
 	var m := UITheme.margin(40)
 	UITheme.fill(m)

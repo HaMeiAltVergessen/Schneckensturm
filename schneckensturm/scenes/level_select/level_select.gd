@@ -3,7 +3,7 @@ extends Control
 
 
 func _ready() -> void:
-	var vb := UITheme.screen(self, 16)
+	var vb := UITheme.screen(self, 16, "menu_bg")
 	vb.add_child(UITheme.header(tr("UI_LEVEL_SELECT")))
 	var row := UITheme.hbox(20)
 	row.alignment = BoxContainer.ALIGNMENT_CENTER

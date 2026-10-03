@@ -3,7 +3,7 @@ extends Control
 
 
 func _ready() -> void:
-	var vb := UITheme.screen(self, 16)
+	var vb := UITheme.screen(self, 16, "menu_bg")
 	vb.alignment = BoxContainer.ALIGNMENT_CENTER
 	vb.add_child(UITheme.title(tr("UI_TITLE")))
 	vb.add_child(UITheme.label(tr("UI_SUBTITLE"), 22, UITheme.MUTED))
