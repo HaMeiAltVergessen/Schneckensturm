@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://bwp1xc50k1p57"]
 
-[ext_resource type="Script" path="res://scenes/boot/boot.gd" id="1_s"]
+[ext_resource type="Script" uid="uid://by41vqos7bfr6" path="res://scenes/boot/boot.gd" id="1_s"]
 
 [node name="Boot" type="Control"]
 layout_mode = 3
