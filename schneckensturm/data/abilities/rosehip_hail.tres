@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_yvcs8"]
+
+[resource]
+script = ExtResource("1_yvcs8")
+id = "rosehip_hail"
+name_key = "ABILITY_ROSEHIP_HAIL_NAME"
+desc_key = "ABILITY_ROSEHIP_HAIL_DESC"
+kind = 0
+power = 2.5
+radius = 1.5
+duration = 0.0
+cooldown = 18.0
+summon_count = 0

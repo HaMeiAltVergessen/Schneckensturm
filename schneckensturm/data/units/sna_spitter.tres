@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_data.gd" id="1_bd1vh"]
+[ext_resource type="Texture2D" path="res://assets/units/enemies/hex_priest_face.png" id="2_felfh"]
+
+[resource]
+script = ExtResource("1_bd1vh")
+id = "sna_spitter"
+name_key = "UNIT_SNA_SPITTER_NAME"
+faction_id = "snails"
+target_class = 1
+max_hp = 300
+attack = 35
+defense = 0
+attack_interval = 2.0
+move_speed = 0.8
+attack_range = 2.2
+is_ranged = true
+block_weight = 1
+block_capacity = 1
+holds_line = false
+leak_damage = 1
+bounty = 2
+is_boss = false
+visual_scale = 1.0
+token = ExtResource("2_felfh")
+brood_interval = 0.0
+brood_count = 1

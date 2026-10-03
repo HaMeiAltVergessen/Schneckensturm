@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BalanceConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/balance_config.gd" id="1_c2g5g"]
+
+[resource]
+script = ExtResource("1_c2g5g")
+enemy_hp_mult = 1.0
+enemy_speed_mult = 1.0
+start_resource_mult = 1.0
+regen_mult = 1.0
+petals = 0
+hero_attack_mult = 1.0
+hero_ability_cooldown_mult = 1.0
+tower_attack_mult = 1.0
+troop_mult = 1.0

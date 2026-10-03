@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="MapLayout" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/map_path.gd" id="1_kvkwk"]
+[ext_resource type="Script" path="res://scripts/resources/map_layout.gd" id="2_wouv5"]
+
+[sub_resource type="Resource" id="Resource_i0wvn"]
+script = ExtResource("1_kvkwk")
+cells = Array[Vector2i]([Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(4, 2), Vector2i(4, 3), Vector2i(4, 4), Vector2i(4, 5), Vector2i(4, 6), Vector2i(4, 7), Vector2i(5, 7), Vector2i(6, 7), Vector2i(7, 7), Vector2i(8, 7), Vector2i(9, 7), Vector2i(10, 7), Vector2i(10, 6), Vector2i(10, 5), Vector2i(10, 4), Vector2i(10, 3), Vector2i(10, 2), Vector2i(11, 2), Vector2i(12, 2), Vector2i(13, 2), Vector2i(14, 2), Vector2i(15, 2)])
+
+[resource]
+script = ExtResource("2_wouv5")
+id = "layout_gar_l3"
+name_key = "MAP_LAYOUT_GAR_L3_NAME"
+size = Vector2i(16, 10)
+paths = Array[ExtResource("1_kvkwk")]([SubResource("Resource_i0wvn")])
+deploy_path_cells = Array[Vector2i]([])
+deploy_edge_cells = Array[Vector2i]([Vector2i(5, 3), Vector2i(5, 8), Vector2i(9, 5), Vector2i(9, 8), Vector2i(11, 1), Vector2i(14, 1)])
+build_slots = Array[Vector2i]([Vector2i(2, 2), Vector2i(3, 5), Vector2i(6, 6), Vector2i(8, 6), Vector2i(7, 4), Vector2i(11, 4), Vector2i(13, 3)])
+blocked_cells = Array[Vector2i]([])
+hero_limit = 1

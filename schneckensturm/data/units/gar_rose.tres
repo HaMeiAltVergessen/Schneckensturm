@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_data.gd" id="1_08j3v"]
+[ext_resource type="Texture2D" path="res://assets/units/troops/the_seraph_face.png" id="2_23xb2"]
+
+[resource]
+script = ExtResource("1_08j3v")
+id = "gar_rose"
+name_key = "UNIT_GAR_ROSE_NAME"
+faction_id = "garden"
+target_class = 0
+max_hp = 450
+attack = 40
+defense = 25
+attack_interval = 1.2
+move_speed = 0.0
+attack_range = 0.8
+is_ranged = false
+block_weight = 1
+block_capacity = 1
+holds_line = false
+leak_damage = 1
+bounty = 1
+is_boss = false
+visual_scale = 1.0
+token = ExtResource("2_23xb2")
+brood_interval = 0.0
+brood_count = 1

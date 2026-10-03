@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="FactionData" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/act_data.gd" id="1_m5hit"]
+[ext_resource type="Script" path="res://scripts/resources/wave_set.gd" id="2_mkfty"]
+[ext_resource type="Resource" path="res://data/waves/gar_l1.tres" id="3_k8nbt"]
+[ext_resource type="Resource" path="res://data/waves/gar_l2.tres" id="4_w6pi0"]
+[ext_resource type="Resource" path="res://data/waves/gar_l3.tres" id="5_yg2yj"]
+[ext_resource type="Script" path="res://scripts/resources/barracks_data.gd" id="6_s7w8v"]
+[ext_resource type="Resource" path="res://data/barracks/gar_rose_bush.tres" id="7_gjxh4"]
+[ext_resource type="Script" path="res://scripts/resources/faction_data.gd" id="8_76dpr"]
+[ext_resource type="Script" path="res://scripts/resources/tower_data.gd" id="9_wsycb"]
+[ext_resource type="Resource" path="res://data/towers/gar_rosehip.tres" id="10_4gqxn"]
+
+[sub_resource type="Resource" id="Resource_6tni1"]
+script = ExtResource("1_m5hit")
+id = "gar_act1"
+name_key = "ACT_GAR_ACT1_NAME"
+act_number = 1
+maps = Array[ExtResource("2_mkfty")]([ExtResource("3_k8nbt"), ExtResource("4_w6pi0"), ExtResource("5_yg2yj")])
+
+[resource]
+script = ExtResource("8_76dpr")
+id = "garden"
+name_key = "FACTION_GARDEN_NAME"
+playable = true
+color = Color(0.85, 0.35, 0.5, 1)
+acts = Array[ExtResource("1_m5hit")]([SubResource("Resource_6tni1")])
+towers = Array[ExtResource("9_wsycb")]([ExtResource("10_4gqxn")])
+barracks = Array[ExtResource("6_s7w8v")]([ExtResource("7_gjxh4")])

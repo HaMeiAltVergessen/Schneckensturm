@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/dialog_line.gd" id="1_6mfbq"]
+[ext_resource type="Texture2D" path="res://assets/units/enemies/demon_lord_face.png" id="2_qi0rc"]
+[ext_resource type="Texture2D" path="res://assets/units/heroes/mira_face.png" id="3_w40wx"]
+[ext_resource type="Script" path="res://scripts/resources/dialog_data.gd" id="4_dqeax"]
+
+[sub_resource type="Resource" id="Resource_im5e7"]
+script = ExtResource("1_6mfbq")
+speaker_name_key = "DIALOG_SPEAKER_NARRATOR"
+text_key = "DIALOG_GAR_L2_POST_1"
+
+[sub_resource type="Resource" id="Resource_84ob2"]
+script = ExtResource("1_6mfbq")
+speaker_name_key = "UNIT_SNA_QUEEN_NAME"
+text_key = "DIALOG_GAR_L2_POST_2"
+portrait = ExtResource("2_qi0rc")
+
+[sub_resource type="Resource" id="Resource_lr7xu"]
+script = ExtResource("1_6mfbq")
+speaker_name_key = "HERO_GAR_CHRISTINA_NAME"
+text_key = "DIALOG_GAR_L2_POST_3"
+portrait = ExtResource("3_w40wx")
+
+[resource]
+script = ExtResource("4_dqeax")
+id = "gar_l2_post"
+lines = Array[ExtResource("1_6mfbq")]([SubResource("Resource_im5e7"), SubResource("Resource_84ob2"), SubResource("Resource_lr7xu")])

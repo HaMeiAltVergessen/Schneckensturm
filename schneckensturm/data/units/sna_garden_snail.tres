@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_data.gd" id="1_td6iu"]
+[ext_resource type="Texture2D" path="res://assets/units/enemies/gargoyle_face.png" id="2_s3dci"]
+
+[resource]
+script = ExtResource("1_td6iu")
+id = "sna_garden_snail"
+name_key = "UNIT_SNA_GARDEN_SNAIL_NAME"
+faction_id = "snails"
+target_class = 0
+max_hp = 700
+attack = 50
+defense = 45
+attack_interval = 1.4
+move_speed = 0.6
+attack_range = 0.8
+is_ranged = false
+block_weight = 1
+block_capacity = 1
+holds_line = false
+leak_damage = 1
+bounty = 2
+is_boss = false
+visual_scale = 1.0
+token = ExtResource("2_s3dci")
+brood_interval = 0.0
+brood_count = 1

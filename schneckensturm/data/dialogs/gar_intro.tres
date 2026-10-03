@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/dialog_line.gd" id="1_bj15r"]
+[ext_resource type="Texture2D" path="res://assets/units/heroes/mira_face.png" id="2_mrho0"]
+[ext_resource type="Texture2D" path="res://assets/units/enemies/demon_lord_face.png" id="3_32ek2"]
+[ext_resource type="Script" path="res://scripts/resources/dialog_data.gd" id="4_b2k6p"]
+
+[sub_resource type="Resource" id="Resource_cw6yy"]
+script = ExtResource("1_bj15r")
+speaker_name_key = "DIALOG_SPEAKER_NARRATOR"
+text_key = "DIALOG_GAR_INTRO_1"
+
+[sub_resource type="Resource" id="Resource_6rmkw"]
+script = ExtResource("1_bj15r")
+speaker_name_key = "DIALOG_SPEAKER_MOM"
+text_key = "DIALOG_GAR_INTRO_2"
+
+[sub_resource type="Resource" id="Resource_dsf61"]
+script = ExtResource("1_bj15r")
+speaker_name_key = "DIALOG_SPEAKER_NARRATOR"
+text_key = "DIALOG_GAR_INTRO_3"
+
+[sub_resource type="Resource" id="Resource_kibem"]
+script = ExtResource("1_bj15r")
+speaker_name_key = "HERO_GAR_CHRISTINA_NAME"
+text_key = "DIALOG_GAR_INTRO_4"
+portrait = ExtResource("2_mrho0")
+
+[sub_resource type="Resource" id="Resource_js6nx"]
+script = ExtResource("1_bj15r")
+speaker_name_key = "UNIT_SNA_QUEEN_NAME"
+text_key = "DIALOG_GAR_INTRO_5"
+portrait = ExtResource("3_32ek2")
+
+[sub_resource type="Resource" id="Resource_1s4kb"]
+script = ExtResource("1_bj15r")
+speaker_name_key = "HERO_GAR_CHRISTINA_NAME"
+text_key = "DIALOG_GAR_INTRO_6"
+portrait = ExtResource("2_mrho0")
+
+[resource]
+script = ExtResource("4_b2k6p")
+id = "gar_intro"
+lines = Array[ExtResource("1_bj15r")]([SubResource("Resource_cw6yy"), SubResource("Resource_6rmkw"), SubResource("Resource_dsf61"), SubResource("Resource_kibem"), SubResource("Resource_js6nx"), SubResource("Resource_1s4kb")])

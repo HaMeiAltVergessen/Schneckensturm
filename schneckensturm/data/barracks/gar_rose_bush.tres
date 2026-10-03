@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="BarracksData" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/barracks_data.gd" id="1_7ua6j"]
+[ext_resource type="Resource" path="res://data/units/gar_rose.tres" id="2_grj3m"]
+[ext_resource type="Script" path="res://scripts/resources/barracks_level.gd" id="3_2pl25"]
+
+[sub_resource type="Resource" id="Resource_c61vq"]
+script = ExtResource("3_2pl25")
+cost = 8
+troop_mult = 1.325
+
+[sub_resource type="Resource" id="Resource_vmtg8"]
+script = ExtResource("3_2pl25")
+cost = 12
+troop_mult = 1.65
+
+[resource]
+script = ExtResource("1_7ua6j")
+id = "gar_rose_bush"
+name_key = "BARRACKS_GAR_ROSE_BUSH_NAME"
+faction_id = "garden"
+cost = 10
+max_hp = 900
+unit = ExtResource("2_grj3m")
+squad_size = 2
+respawn_time = 12.0
+color = Color(0.85, 0.35, 0.5, 1)
+upgrades = Array[ExtResource("3_2pl25")]([SubResource("Resource_c61vq"), SubResource("Resource_vmtg8")])

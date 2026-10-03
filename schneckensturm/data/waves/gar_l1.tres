@@ -1,0 +1,136 @@
+[gd_resource type="Resource" script_class="WaveSet" load_steps=24 format=3]
+
+[ext_resource type="Resource" path="res://data/maps/layout_gar_l1.tres" id="1_nngyt"]
+[ext_resource type="Resource" path="res://data/dialogs/gar_l1_post.tres" id="2_jici7"]
+[ext_resource type="Resource" path="res://data/dialogs/gar_intro.tres" id="3_xbcau"]
+[ext_resource type="Script" path="res://scripts/resources/wave_set.gd" id="4_v28l7"]
+[ext_resource type="Script" path="res://scripts/resources/wave_data.gd" id="5_010d7"]
+[ext_resource type="Script" path="res://scripts/resources/spawn_group.gd" id="6_k3hhf"]
+[ext_resource type="Resource" path="res://data/units/sna_slug.tres" id="7_gfowj"]
+[ext_resource type="Resource" path="res://data/units/sna_garden_snail.tres" id="8_fyq3t"]
+[ext_resource type="Resource" path="res://data/units/sna_spitter.tres" id="9_5ryep"]
+
+[sub_resource type="Resource" id="Resource_ctdrv"]
+script = ExtResource("6_k3hhf")
+unit = ExtResource("7_gfowj")
+count = 10
+interval = 1.1
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_d2uij"]
+script = ExtResource("5_010d7")
+groups = Array[ExtResource("6_k3hhf")]([SubResource("Resource_ctdrv")])
+next_delay = 18.0
+announce_key = ""
+
+[sub_resource type="Resource" id="Resource_v1xof"]
+script = ExtResource("6_k3hhf")
+unit = ExtResource("7_gfowj")
+count = 16
+interval = 0.9
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_0tajx"]
+script = ExtResource("5_010d7")
+groups = Array[ExtResource("6_k3hhf")]([SubResource("Resource_v1xof")])
+next_delay = 18.0
+announce_key = ""
+
+[sub_resource type="Resource" id="Resource_aj03h"]
+script = ExtResource("6_k3hhf")
+unit = ExtResource("7_gfowj")
+count = 10
+interval = 1.0
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_8dbaj"]
+script = ExtResource("6_k3hhf")
+unit = ExtResource("8_fyq3t")
+count = 5
+interval = 1.65
+delay = 4.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_12wvv"]
+script = ExtResource("5_010d7")
+groups = Array[ExtResource("6_k3hhf")]([SubResource("Resource_aj03h"), SubResource("Resource_8dbaj")])
+next_delay = 18.0
+announce_key = ""
+
+[sub_resource type="Resource" id="Resource_nol6j"]
+script = ExtResource("6_k3hhf")
+unit = ExtResource("7_gfowj")
+count = 16
+interval = 0.75
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_t1vxm"]
+script = ExtResource("6_k3hhf")
+unit = ExtResource("9_5ryep")
+count = 5
+interval = 1.4
+delay = 3.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_topv7"]
+script = ExtResource("5_010d7")
+groups = Array[ExtResource("6_k3hhf")]([SubResource("Resource_nol6j"), SubResource("Resource_t1vxm")])
+next_delay = 18.0
+announce_key = "WAVE_SPITTERS"
+
+[sub_resource type="Resource" id="Resource_erpkl"]
+script = ExtResource("6_k3hhf")
+unit = ExtResource("7_gfowj")
+count = 21
+interval = 0.65
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_dfqym"]
+script = ExtResource("6_k3hhf")
+unit = ExtResource("8_fyq3t")
+count = 5
+interval = 1.65
+delay = 2.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_y533r"]
+script = ExtResource("6_k3hhf")
+unit = ExtResource("9_5ryep")
+count = 5
+interval = 1.4
+delay = 4.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_r1i3o"]
+script = ExtResource("5_010d7")
+groups = Array[ExtResource("6_k3hhf")]([SubResource("Resource_erpkl"), SubResource("Resource_dfqym"), SubResource("Resource_y533r")])
+next_delay = 0.0
+announce_key = "WAVE_FINAL"
+
+[resource]
+script = ExtResource("4_v28l7")
+id = "gar_l1"
+name_key = "MAP_GAR_L1_NAME"
+faction_id = "garden"
+enemy_faction_id = "snails"
+act = 1
+layout = ExtResource("1_nngyt")
+waves = Array[ExtResource("5_010d7")]([SubResource("Resource_d2uij"), SubResource("Resource_0tajx"), SubResource("Resource_12wvv"), SubResource("Resource_topv7"), SubResource("Resource_r1i3o")])
+hero_limit_override = -1
+is_boss = false
+music_key = "battle"
+pre_dialog = ExtResource("3_xbcau")
+post_dialog = ExtResource("2_jici7")
+start_resource = 20
+resource_regen = 0.6
+resource_cap = 99
+kill_bonus_mult = 0.5
+lives = 10
+prep_time = 25.0
+retreat_refund_ratio = 0.35
+heal_cost_per_hp = 0.02

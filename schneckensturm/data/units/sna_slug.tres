@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/unit_data.gd" id="1_p0qrp"]
+[ext_resource type="Texture2D" path="res://assets/units/enemies/imp_face.png" id="2_12c8r"]
+
+[resource]
+script = ExtResource("1_p0qrp")
+id = "sna_slug"
+name_key = "UNIT_SNA_SLUG_NAME"
+faction_id = "snails"
+target_class = 0
+max_hp = 260
+attack = 35
+defense = 0
+attack_interval = 1.1
+move_speed = 1.15
+attack_range = 0.8
+is_ranged = false
+block_weight = 1
+block_capacity = 1
+holds_line = false
+leak_damage = 1
+bounty = 1
+is_boss = false
+visual_scale = 0.85
+token = ExtResource("2_12c8r")
+brood_interval = 0.0
+brood_count = 1

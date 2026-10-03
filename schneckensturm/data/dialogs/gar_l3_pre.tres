@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/dialog_line.gd" id="1_kenkq"]
+[ext_resource type="Texture2D" path="res://assets/units/enemies/demon_lord_face.png" id="2_nlc3d"]
+[ext_resource type="Texture2D" path="res://assets/units/heroes/mira_face.png" id="3_85akr"]
+[ext_resource type="Script" path="res://scripts/resources/dialog_data.gd" id="4_mic35"]
+
+[sub_resource type="Resource" id="Resource_bc7fo"]
+script = ExtResource("1_kenkq")
+speaker_name_key = "DIALOG_SPEAKER_NARRATOR"
+text_key = "DIALOG_GAR_L3_PRE_1"
+
+[sub_resource type="Resource" id="Resource_utjhj"]
+script = ExtResource("1_kenkq")
+speaker_name_key = "UNIT_SNA_QUEEN_NAME"
+text_key = "DIALOG_GAR_L3_PRE_2"
+portrait = ExtResource("2_nlc3d")
+
+[sub_resource type="Resource" id="Resource_jv5lt"]
+script = ExtResource("1_kenkq")
+speaker_name_key = "HERO_GAR_CHRISTINA_NAME"
+text_key = "DIALOG_GAR_L3_PRE_3"
+portrait = ExtResource("3_85akr")
+
+[resource]
+script = ExtResource("4_mic35")
+id = "gar_l3_pre"
+lines = Array[ExtResource("1_kenkq")]([SubResource("Resource_bc7fo"), SubResource("Resource_utjhj"), SubResource("Resource_jv5lt")])

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="TargetRuleSet" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/target_rule.gd" id="1_1l2a1"]
+[ext_resource type="Script" path="res://scripts/resources/target_rule_set.gd" id="2_7twqb"]
+
+[sub_resource type="Resource" id="Resource_7gco3"]
+script = ExtResource("1_1l2a1")
+target_class = 0
+can_be_blocked = true
+attack_mode = 0
+stops_to_attack = true
+hittable_by_melee = true
+
+[sub_resource type="Resource" id="Resource_mvwhy"]
+script = ExtResource("1_1l2a1")
+target_class = 1
+can_be_blocked = true
+attack_mode = 1
+stops_to_attack = true
+hittable_by_melee = true
+
+[sub_resource type="Resource" id="Resource_ee5hh"]
+script = ExtResource("1_1l2a1")
+target_class = 2
+can_be_blocked = false
+attack_mode = 1
+stops_to_attack = false
+hittable_by_melee = false
+
+[sub_resource type="Resource" id="Resource_20332"]
+script = ExtResource("1_1l2a1")
+target_class = 3
+can_be_blocked = true
+attack_mode = 2
+stops_to_attack = true
+hittable_by_melee = true
+
+[sub_resource type="Resource" id="Resource_sjgun"]
+script = ExtResource("1_1l2a1")
+target_class = 4
+can_be_blocked = true
+attack_mode = 3
+stops_to_attack = true
+hittable_by_melee = true
+
+[resource]
+script = ExtResource("2_7twqb")
+rules = Array[ExtResource("1_1l2a1")]([SubResource("Resource_7gco3"), SubResource("Resource_mvwhy"), SubResource("Resource_ee5hh"), SubResource("Resource_20332"), SubResource("Resource_sjgun")])

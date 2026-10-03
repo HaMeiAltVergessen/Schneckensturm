@@ -1,0 +1,190 @@
+[gd_resource type="Resource" script_class="WaveSet" load_steps=33 format=3]
+
+[ext_resource type="Resource" path="res://data/maps/layout_gar_l3.tres" id="1_oejfi"]
+[ext_resource type="Resource" path="res://data/dialogs/gar_finale.tres" id="2_emqs7"]
+[ext_resource type="Resource" path="res://data/dialogs/gar_l3_pre.tres" id="3_pajis"]
+[ext_resource type="Script" path="res://scripts/resources/wave_set.gd" id="4_sydgl"]
+[ext_resource type="Script" path="res://scripts/resources/wave_data.gd" id="5_pfl4q"]
+[ext_resource type="Script" path="res://scripts/resources/spawn_group.gd" id="6_byxid"]
+[ext_resource type="Resource" path="res://data/units/sna_slug.tres" id="7_pjqhl"]
+[ext_resource type="Resource" path="res://data/units/sna_spitter.tres" id="8_xcfrb"]
+[ext_resource type="Resource" path="res://data/units/sna_garden_snail.tres" id="9_jjpw4"]
+[ext_resource type="Resource" path="res://data/units/sna_armored.tres" id="10_kbn1u"]
+[ext_resource type="Resource" path="res://data/units/sna_queen.tres" id="11_jdluu"]
+
+[sub_resource type="Resource" id="Resource_n41kf"]
+script = ExtResource("6_byxid")
+unit = ExtResource("7_pjqhl")
+count = 10
+interval = 1.15
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_v5ubf"]
+script = ExtResource("5_pfl4q")
+groups = Array[ExtResource("6_byxid")]([SubResource("Resource_n41kf")])
+next_delay = 18.0
+announce_key = ""
+
+[sub_resource type="Resource" id="Resource_j7ir2"]
+script = ExtResource("6_byxid")
+unit = ExtResource("7_pjqhl")
+count = 8
+interval = 1.05
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_dyfby"]
+script = ExtResource("6_byxid")
+unit = ExtResource("8_xcfrb")
+count = 5
+interval = 1.9
+delay = 2.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_qud6n"]
+script = ExtResource("5_pfl4q")
+groups = Array[ExtResource("6_byxid")]([SubResource("Resource_j7ir2"), SubResource("Resource_dyfby")])
+next_delay = 18.0
+announce_key = ""
+
+[sub_resource type="Resource" id="Resource_h4h67"]
+script = ExtResource("6_byxid")
+unit = ExtResource("9_jjpw4")
+count = 5
+interval = 1.65
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_lwjf6"]
+script = ExtResource("6_byxid")
+unit = ExtResource("7_pjqhl")
+count = 6
+interval = 1.15
+delay = 3.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_l00qm"]
+script = ExtResource("5_pfl4q")
+groups = Array[ExtResource("6_byxid")]([SubResource("Resource_h4h67"), SubResource("Resource_lwjf6")])
+next_delay = 18.0
+announce_key = ""
+
+[sub_resource type="Resource" id="Resource_0caiy"]
+script = ExtResource("6_byxid")
+unit = ExtResource("10_kbn1u")
+count = 3
+interval = 4.5
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_lo3o6"]
+script = ExtResource("6_byxid")
+unit = ExtResource("7_pjqhl")
+count = 10
+interval = 1.0
+delay = 1.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_8bhjc"]
+script = ExtResource("5_pfl4q")
+groups = Array[ExtResource("6_byxid")]([SubResource("Resource_0caiy"), SubResource("Resource_lo3o6")])
+next_delay = 20.0
+announce_key = "WAVE_SIEGE"
+
+[sub_resource type="Resource" id="Resource_megak"]
+script = ExtResource("6_byxid")
+unit = ExtResource("9_jjpw4")
+count = 6
+interval = 1.5
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_b32d0"]
+script = ExtResource("6_byxid")
+unit = ExtResource("8_xcfrb")
+count = 5
+interval = 1.65
+delay = 2.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_2n7vy"]
+script = ExtResource("5_pfl4q")
+groups = Array[ExtResource("6_byxid")]([SubResource("Resource_megak"), SubResource("Resource_b32d0")])
+next_delay = 18.0
+announce_key = ""
+
+[sub_resource type="Resource" id="Resource_hics8"]
+script = ExtResource("6_byxid")
+unit = ExtResource("7_pjqhl")
+count = 16
+interval = 0.6
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_n28x5"]
+script = ExtResource("6_byxid")
+unit = ExtResource("9_jjpw4")
+count = 3
+interval = 1.9
+delay = 4.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_aelvo"]
+script = ExtResource("5_pfl4q")
+groups = Array[ExtResource("6_byxid")]([SubResource("Resource_hics8"), SubResource("Resource_n28x5")])
+next_delay = 18.0
+announce_key = "WAVE_BROOD"
+
+[sub_resource type="Resource" id="Resource_22qp0"]
+script = ExtResource("6_byxid")
+unit = ExtResource("11_jdluu")
+count = 2
+interval = 0.75
+delay = 2.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_2l17j"]
+script = ExtResource("6_byxid")
+unit = ExtResource("7_pjqhl")
+count = 8
+interval = 1.35
+delay = 0.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_wayje"]
+script = ExtResource("6_byxid")
+unit = ExtResource("8_xcfrb")
+count = 3
+interval = 2.25
+delay = 3.0
+path_index = 0
+
+[sub_resource type="Resource" id="Resource_nd434"]
+script = ExtResource("5_pfl4q")
+groups = Array[ExtResource("6_byxid")]([SubResource("Resource_22qp0"), SubResource("Resource_2l17j"), SubResource("Resource_wayje")])
+next_delay = 0.0
+announce_key = "WAVE_BOSS"
+
+[resource]
+script = ExtResource("4_sydgl")
+id = "gar_l3"
+name_key = "MAP_GAR_L3_NAME"
+faction_id = "garden"
+enemy_faction_id = "snails"
+act = 1
+layout = ExtResource("1_oejfi")
+waves = Array[ExtResource("5_pfl4q")]([SubResource("Resource_v5ubf"), SubResource("Resource_qud6n"), SubResource("Resource_l00qm"), SubResource("Resource_8bhjc"), SubResource("Resource_2n7vy"), SubResource("Resource_aelvo"), SubResource("Resource_nd434")])
+hero_limit_override = -1
+is_boss = true
+music_key = "boss"
+pre_dialog = ExtResource("3_pajis")
+post_dialog = ExtResource("2_emqs7")
+start_resource = 28
+resource_regen = 0.6
+resource_cap = 99
+kill_bonus_mult = 0.5
+lives = 10
+prep_time = 25.0
+retreat_refund_ratio = 0.35
+heal_cost_per_hp = 0.02

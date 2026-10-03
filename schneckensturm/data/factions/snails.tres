@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FactionData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/act_data.gd" id="1_s0sxn"]
+[ext_resource type="Script" path="res://scripts/resources/barracks_data.gd" id="2_6fyp7"]
+[ext_resource type="Script" path="res://scripts/resources/faction_data.gd" id="3_uqwv2"]
+[ext_resource type="Script" path="res://scripts/resources/tower_data.gd" id="4_aker1"]
+
+[resource]
+script = ExtResource("3_uqwv2")
+id = "snails"
+name_key = "FACTION_SNAILS_NAME"
+playable = false
+color = Color(0.55, 0.65, 0.3, 1)
+acts = Array[ExtResource("1_s0sxn")]([])
+towers = Array[ExtResource("4_aker1")]([])
+barracks = Array[ExtResource("2_6fyp7")]([])
