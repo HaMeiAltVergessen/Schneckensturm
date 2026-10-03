@@ -279,7 +279,7 @@ Android schneidet rund bzw. abgerundet zu, deshalb das Wichtige in die **mittler
 App icon, square, full-bleed: head and shoulders of a cheerful young woman with long dark blond hair in sage-green pajamas drawing a wooden bow, a big coral-pink dahlia blossom behind her, a cheeky cartoon snail with a tiny crown peeking in from the lower corner. All important content in the central area, bold simple shapes readable at small size, thick clean outlines, cartoon storybook style, vibrant colors on a deep night-blue background with a soft moon glow. No text, no letters, no border, no watermark.
 ```
 
-### 4.8 Boden-Kacheln → `art_raw/tiles/`
+### 4.8 Boden-Kacheln → `art_raw/tiles/` (optional, derzeit nicht genutzt)
 Aus quadratischen, **nahtlosen Draufsicht-Texturen** baut `tools/art.sh` automatisch die Iso-Rauten
 (128 × 64) samt blauen Christina-Feldern und weißen Bauplätzen. Pro Level gibt es drei Bilder:
 `ground` (Fläche), `path` (Schneckenweg) und `blocked` (unbegehbar, optional, sonst abgedunkelter Boden).
@@ -305,21 +305,21 @@ Die Texturen bleiben **ruhig und gleichmäßig**: keine Objekte, keine Schatten,
 Empfohlene Reihenfolge, jede Stufe macht das Spiel sichtbar schöner:
 
 **A – Pflicht, Spielfeld (17)**
-- [ ] `gar_christina` · [ ] `gar_rose`
-- [ ] `sna_slug` · [ ] `sna_garden_snail` · [ ] `sna_spitter` · [ ] `sna_armored` · [ ] `sna_queen`
-- [ ] `gar_rose_bush` · [ ] `_2` · [ ] `_3` — [ ] `gar_rosehip` · [ ] `_2` · [ ] `_3`
-- [ ] `dahlia_0` · [ ] `dahlia_1` · [ ] `dahlia_2` · [ ] `dahlia_3`
+- [x] `gar_christina` · [x] `gar_rose`
+- [x] `sna_slug` · [x] `sna_garden_snail` · [x] `sna_spitter` · [x] `sna_armored` · [x] `sna_queen`
+- [x] `gar_rose_bush` · [x] `_2` · [x] `_3` — [x] `gar_rosehip` · [x] `_2` · [x] `_3`
+- [x] `dahlia_0` · [x] `dahlia_1` · [x] `dahlia_2` · [x] `dahlia_3`
 
 **B – Story (12)**
-- [ ] `gar_christina_portrait` · [ ] `sna_queen_portrait` · [ ] `mom`
-- [ ] `menu_bg` · [ ] `bg_gar_intro` · [ ] `bg_gar_intro_3` · [ ] `bg_gar_l1_post` · [ ] `bg_gar_l2_post`
-- [ ] `bg_gar_l3_pre` · [ ] `bg_gar_finale` · [ ] `bg_gar_finale_3` · [ ] `credits_bg`
+- [x] `gar_christina_portrait` · [x] `sna_queen_portrait` · [x] `mom`
+- [x] `menu_bg` · [x] `bg_gar_intro` · [x] `bg_gar_intro_3` · [x] `bg_gar_l1_post` · [x] `bg_gar_l2_post`
+- [x] `bg_gar_l3_pre` · [x] `bg_gar_finale` · [x] `bg_gar_finale_3` · [x] `credits_bg`
 
 **C – Feinschliff (6)**
-- [ ] `icon_leinen_los` · [ ] `icon_rosehip_hail` · [ ] `icon_heal` · [ ] `icon_petal` · [ ] `icon_resource`
-- [ ] `app_icon`
+- [x] `icon_leinen_los` · [x] `icon_rosehip_hail` · [x] `icon_heal` · [x] `icon_petal` · [x] `icon_resource`
+- [x] `app_icon`
 
-**D – Boden (9)**
+**D – Boden (9, optional — verworfen, das Spiel nutzt das Platzhalter-Tileset)**
 - [ ] `tile_l1_ground` · [ ] `tile_l1_path` · [ ] `tile_l1_blocked`
 - [ ] `tile_l2_ground` · [ ] `tile_l2_path` · [ ] `tile_l2_blocked`
 - [ ] `tile_l3_ground` · [ ] `tile_l3_path` · [ ] `tile_l3_blocked`
@@ -337,6 +337,7 @@ Dialog-IDs: `gar_intro`, `gar_l1_post`, `gar_l2_post`, `gar_l3_pre`, `gar_finale
 |---|---|
 | Rosa/grüner **Saum** um die Figur | Flux hat den Hintergrund leicht verlaufen lassen. Neu generieren mit Betonung auf „plain flat solid … background“ oder im Editor-Dialog (Chroma Key) die Toleranz erhöhen. |
 | **Löcher** in der Figur | Die Keyfarbe kommt im Motiv vor. Die andere Keyfarbe nehmen (Magenta ↔ Cyan). |
+| Hintergrund **zwischen Bogen und Sehne / Ästen** bleibt stehen | Name (ohne Stufennummer) in `HOLES` in `tools/process_art.gd` eintragen – dann werden auch eingeschlossene Flächen freigestellt. Nicht global, sonst verschwinden rosa Lippen oder helle Augen. |
 | **Bodenschatten** bleibt stehen | Flux malt gern einen Schatten unter die Figur. „no shadow, no ground“ steht schon drin; notfalls im Bildprogramm wegradieren. |
 | Figur im Medaillon zu klein | Pose kompakter halten. Die Pipeline schneidet ohnehin auf den Inhalt zu. |
 | Stufenbilder passen nicht zusammen | img2img mit niedrigerem Denoise (0,4) oder Inpainting nur auf den geänderten Bereich. |

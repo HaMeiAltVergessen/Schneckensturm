@@ -1,20 +1,25 @@
-[gd_resource type="Resource" script_class="TowerData" load_steps=6 format=3]
+[gd_resource type="Resource" script_class="TowerData" load_steps=9 format=3]
 
 [ext_resource type="Resource" path="res://data/abilities/rosehip_hail.tres" id="1_jhd16"]
 [ext_resource type="Script" path="res://scripts/resources/tower_data.gd" id="2_262d4"]
 [ext_resource type="Script" path="res://scripts/resources/tower_level.gd" id="3_845kb"]
+[ext_resource type="Texture2D" path="res://assets/garden/gar_rosehip.png" id="3_iwvyg"]
+[ext_resource type="Texture2D" path="res://assets/garden/gar_rosehip_2.png" id="5_3rqi3"]
+[ext_resource type="Texture2D" path="res://assets/garden/gar_rosehip_3.png" id="6_ejhi7"]
 
 [sub_resource type="Resource" id="Resource_iwvyg"]
 script = ExtResource("3_845kb")
 cost = 10
 attack = 108
 attack_interval = 1.19
+texture = ExtResource("5_3rqi3")
 
 [sub_resource type="Resource" id="Resource_3rqi3"]
 script = ExtResource("3_845kb")
 cost = 14
 attack = 146
 attack_interval = 1.01
+texture = ExtResource("6_ejhi7")
 
 [resource]
 script = ExtResource("2_262d4")
@@ -31,4 +36,5 @@ can_hit_flyers = true
 target_priority = 1
 ability = ExtResource("1_jhd16")
 color = Color(0.85, 0.3, 0.2, 1)
+texture = ExtResource("3_iwvyg")
 upgrades = Array[ExtResource("3_845kb")]([SubResource("Resource_iwvyg"), SubResource("Resource_3rqi3")])

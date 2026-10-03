@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/unit_data.gd" id="1_bd1vh"]
-[ext_resource type="Texture2D" path="res://assets/units/enemies/hex_priest_face.png" id="2_felfh"]
+[ext_resource type="Texture2D" path="res://assets/garden/sna_spitter.png" id="2_bd1vh"]
 
 [resource]
 script = ExtResource("1_bd1vh")
@@ -23,6 +23,6 @@ leak_damage = 1
 bounty = 2
 is_boss = false
 visual_scale = 1.0
-token = ExtResource("2_felfh")
+token = ExtResource("2_bd1vh")
 brood_interval = 0.0
 brood_count = 1

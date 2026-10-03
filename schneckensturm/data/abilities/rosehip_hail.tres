@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="AbilityData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="AbilityData" load_steps=3 format=3]
 
+[ext_resource type="Texture2D" path="res://assets/ui/icon_rosehip_hail.png" id="1_2oa2e"]
 [ext_resource type="Script" path="res://scripts/resources/ability_data.gd" id="1_yvcs8"]
 
 [resource]
@@ -13,3 +14,4 @@ radius = 1.5
 duration = 0.0
 cooldown = 18.0
 summon_count = 0
+icon = ExtResource("1_2oa2e")

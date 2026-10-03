@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/unit_data.gd" id="1_p0qrp"]
-[ext_resource type="Texture2D" path="res://assets/units/enemies/imp_face.png" id="2_12c8r"]
+[ext_resource type="Texture2D" path="res://assets/garden/sna_slug.png" id="2_p0qrp"]
 
 [resource]
 script = ExtResource("1_p0qrp")
@@ -23,6 +23,6 @@ leak_damage = 1
 bounty = 1
 is_boss = false
 visual_scale = 0.85
-token = ExtResource("2_12c8r")
+token = ExtResource("2_p0qrp")
 brood_interval = 0.0
 brood_count = 1

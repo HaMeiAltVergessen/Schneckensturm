@@ -25,6 +25,9 @@ func _run() -> void:
 	expect_eq(out.get_pixel(0, 0).a, 0.0, "corner is transparent")
 	expect_eq(out.get_pixel(32, 32).a, 1.0, "enclosed key-coloured hole is kept (flood fill from border)")
 	expect_eq(out.get_pixel(32, 20).a, 1.0, "subject stays opaque")
+	var holed := ChromaKey.key(img, Color(0, 0, 0, 0), ChromaKey.DEFAULT_TOLERANCE, ChromaKey.DEFAULT_FEATHER, true, true)
+	expect_eq(holed.get_pixel(32, 32).a, 0.0, "holes=true keys the enclosed hole as well")
+	expect_eq(holed.get_pixel(32, 20).a, 1.0, "holes=true keeps the subject")
 	var fringe := 0
 	for y in 64:
 		for x in 64:

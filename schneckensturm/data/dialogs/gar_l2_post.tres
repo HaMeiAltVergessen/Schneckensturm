@@ -1,26 +1,28 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=8 format=3]
+[gd_resource type="Resource" script_class="DialogData" load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/dialog_line.gd" id="1_6mfbq"]
-[ext_resource type="Texture2D" path="res://assets/units/enemies/demon_lord_face.png" id="2_qi0rc"]
-[ext_resource type="Texture2D" path="res://assets/units/heroes/mira_face.png" id="3_w40wx"]
+[ext_resource type="Texture2D" path="res://assets/ui/bg_gar_l2_post.jpg" id="2_qi0rc"]
+[ext_resource type="Texture2D" path="res://assets/garden/sna_queen_portrait.png" id="3_w40wx"]
 [ext_resource type="Script" path="res://scripts/resources/dialog_data.gd" id="4_dqeax"]
+[ext_resource type="Texture2D" path="res://assets/garden/gar_christina_portrait.png" id="4_im5e7"]
 
 [sub_resource type="Resource" id="Resource_im5e7"]
 script = ExtResource("1_6mfbq")
 speaker_name_key = "DIALOG_SPEAKER_NARRATOR"
 text_key = "DIALOG_GAR_L2_POST_1"
+background = ExtResource("2_qi0rc")
 
 [sub_resource type="Resource" id="Resource_84ob2"]
 script = ExtResource("1_6mfbq")
 speaker_name_key = "UNIT_SNA_QUEEN_NAME"
 text_key = "DIALOG_GAR_L2_POST_2"
-portrait = ExtResource("2_qi0rc")
+portrait = ExtResource("3_w40wx")
 
 [sub_resource type="Resource" id="Resource_lr7xu"]
 script = ExtResource("1_6mfbq")
 speaker_name_key = "HERO_GAR_CHRISTINA_NAME"
 text_key = "DIALOG_GAR_L2_POST_3"
-portrait = ExtResource("3_w40wx")
+portrait = ExtResource("4_im5e7")
 
 [resource]
 script = ExtResource("4_dqeax")

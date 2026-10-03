@@ -14,6 +14,9 @@ const SPRITES := {
 	"dahlia": ["res://assets/garden", Vector2i(256, 384), ChromaKey.Anchor.BOTTOM],
 	"icons": ["res://assets/ui", Vector2i(128, 128), ChromaKey.Anchor.CENTER],
 }
+## Groups whose enclosed background must go too (bow string, branches, hail).
+## Not global: keying holes would also eat pinkish lips or pale eye whites.
+const HOLES := ["gar_christina", "gar_rosehip", "icon_rosehip_hail"]
 const BACKGROUND_SIZE := Vector2i(1920, 1080)
 const APP_DIR := "res://assets/app"
 const TILE_NAME := "tile_l%d_%s"     # tile_l1_ground / _path / _blocked
@@ -56,7 +59,8 @@ func _sprites(cat: String, out_dir: String, size: Vector2i, anchor: int) -> void
 			continue
 		var keyed: Array[Image] = []
 		for f in files:
-			keyed.append(ChromaKey.key(_load(cat, f)))
+			keyed.append(ChromaKey.key(_load(cat, f), Color(0, 0, 0, 0), ChromaKey.DEFAULT_TOLERANCE,
+					ChromaKey.DEFAULT_FEATHER, true, g in HOLES))
 		var frame := ChromaKey.union_rect(keyed)
 		for i in files.size():
 			var img := ChromaKey.fit(ChromaKey.trim(keyed[i], 8, frame), size, anchor)

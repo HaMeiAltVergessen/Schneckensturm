@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="HeroData" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="HeroData" load_steps=5 format=3]
 
 [ext_resource type="Resource" path="res://data/abilities/leinen_los.tres" id="1_10fho"]
-[ext_resource type="Texture2D" path="res://assets/units/heroes/mira_face.png" id="2_88pc0"]
+[ext_resource type="Texture2D" path="res://assets/garden/gar_christina_portrait.png" id="2_88pc0"]
 [ext_resource type="Script" path="res://scripts/resources/hero_data.gd" id="3_wkn7l"]
+[ext_resource type="Texture2D" path="res://assets/garden/gar_christina.png" id="4_wkn7l"]
 
 [resource]
 script = ExtResource("3_wkn7l")
@@ -25,5 +26,5 @@ deploy_cost = 8
 redeploy_cooldown = 15.0
 ability = ExtResource("1_10fho")
 essential = true
-token = ExtResource("2_88pc0")
+token = ExtResource("4_wkn7l")
 portrait = ExtResource("2_88pc0")

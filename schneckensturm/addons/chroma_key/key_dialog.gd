@@ -18,6 +18,7 @@ var _size: SpinBox
 var _anchor: OptionButton
 var _trim: CheckBox
 var _shared: CheckBox
+var _holes: CheckBox
 var _picker: FileDialog
 var _dir_picker: FileDialog
 
@@ -65,6 +66,7 @@ func _init() -> void:
 	opts.add_child(_anchor)
 	_trim = _check(opts, "Zuschneiden", true)
 	_shared = _check(opts, "gleicher Ausschnitt für alle", false)
+	_holes = _check(opts, "eingeschlossene Flächen auch", false)
 
 	var out_row := HBoxContainer.new()
 	root.add_child(out_row)
@@ -116,7 +118,7 @@ func _refresh() -> void:
 
 func _keyed_preview(img: Image) -> Image:
 	var key_col := Color(0, 0, 0, 0) if _auto_key.button_pressed else _key.color
-	var out := ChromaKey.key(img, key_col, _tol.value, _feather.value)
+	var out := ChromaKey.key(img, key_col, _tol.value, _feather.value, true, _holes.button_pressed)
 	if _trim.button_pressed:
 		out = ChromaKey.trim(out, 8)
 	if _size.value > 0:
@@ -128,7 +130,7 @@ func _run() -> void:
 	var key_col := Color(0, 0, 0, 0) if _auto_key.button_pressed else _key.color
 	var keyed: Array[Image] = []
 	for p in _files:
-		keyed.append(ChromaKey.key(Image.load_from_file(p), key_col, _tol.value, _feather.value))
+		keyed.append(ChromaKey.key(Image.load_from_file(p), key_col, _tol.value, _feather.value, true, _holes.button_pressed))
 	var shared := ChromaKey.union_rect(keyed) if _shared.button_pressed else Rect2i()
 	for i in _files.size():
 		var out := keyed[i]

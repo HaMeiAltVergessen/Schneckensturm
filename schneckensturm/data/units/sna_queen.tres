@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" path="res://data/units/sna_slug.tres" id="1_xuk5m"]
 [ext_resource type="Script" path="res://scripts/resources/unit_data.gd" id="2_o1a5a"]
-[ext_resource type="Texture2D" path="res://assets/units/enemies/demon_lord_face.png" id="3_f0ixi"]
+[ext_resource type="Texture2D" path="res://assets/garden/sna_queen.png" id="3_xuk5m"]
 
 [resource]
 script = ExtResource("2_o1a5a")
@@ -24,7 +24,7 @@ leak_damage = 99
 bounty = 10
 is_boss = true
 visual_scale = 1.7
-token = ExtResource("3_f0ixi")
+token = ExtResource("3_xuk5m")
 brood_unit = ExtResource("1_xuk5m")
 brood_interval = 6.0
 brood_count = 2

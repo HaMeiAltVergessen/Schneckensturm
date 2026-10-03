@@ -40,10 +40,12 @@ static func detect_key(img: Image) -> Color:
 
 ## Removes the background. Only pixels connected to the image border are keyed
 ## (flood fill), so key-coloured details *inside* the subject survive.
+## `holes` = also key enclosed background (gap between bow and string, between
+## branches): every pixel within half the `tolerance` seeds the fill as well.
 ## `key_color` with alpha 0 = auto-detect from the border.
 ## Returns a new RGBA8 image; the input stays untouched.
 static func key(src: Image, key_color := Color(0, 0, 0, 0), tolerance := DEFAULT_TOLERANCE,
-		feather := DEFAULT_FEATHER, despill := true) -> Image:
+		feather := DEFAULT_FEATHER, despill := true, holes := false) -> Image:
 	var img := src.duplicate() as Image
 	if img.is_compressed():
 		img.decompress()
@@ -80,6 +82,10 @@ static func key(src: Image, key_color := Color(0, 0, 0, 0), tolerance := DEFAULT
 	for y in h:
 		stack.append(y * w)
 		stack.append(y * w + w - 1)
+	if holes:
+		for i in n:
+			if dist[i] < tolerance * 0.5:
+				stack.append(i)
 	while not stack.is_empty():
 		var i := stack[stack.size() - 1]
 		stack.resize(stack.size() - 1)

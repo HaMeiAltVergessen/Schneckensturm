@@ -1,37 +1,43 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=10 format=3]
+[gd_resource type="Resource" script_class="DialogData" load_steps=13 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/dialog_line.gd" id="1_fu45y"]
-[ext_resource type="Texture2D" path="res://assets/units/enemies/demon_lord_face.png" id="2_pwqok"]
-[ext_resource type="Texture2D" path="res://assets/units/heroes/mira_face.png" id="3_f7dvw"]
+[ext_resource type="Texture2D" path="res://assets/ui/bg_gar_finale.jpg" id="2_7mo0j"]
+[ext_resource type="Texture2D" path="res://assets/garden/sna_queen_portrait.png" id="3_heuca"]
 [ext_resource type="Script" path="res://scripts/resources/dialog_data.gd" id="4_7mo0j"]
+[ext_resource type="Texture2D" path="res://assets/garden/gar_christina_portrait.png" id="4_wibhk"]
+[ext_resource type="Texture2D" path="res://assets/ui/bg_gar_finale_3.jpg" id="5_8valj"]
+[ext_resource type="Texture2D" path="res://assets/garden/mom.png" id="6_4pfbb"]
 
 [sub_resource type="Resource" id="Resource_heuca"]
 script = ExtResource("1_fu45y")
 speaker_name_key = "UNIT_SNA_QUEEN_NAME"
 text_key = "DIALOG_GAR_FINALE_1"
-portrait = ExtResource("2_pwqok")
+portrait = ExtResource("3_heuca")
+background = ExtResource("2_7mo0j")
 
 [sub_resource type="Resource" id="Resource_wibhk"]
 script = ExtResource("1_fu45y")
 speaker_name_key = "HERO_GAR_CHRISTINA_NAME"
 text_key = "DIALOG_GAR_FINALE_2"
-portrait = ExtResource("3_f7dvw")
+portrait = ExtResource("4_wibhk")
 
 [sub_resource type="Resource" id="Resource_8valj"]
 script = ExtResource("1_fu45y")
 speaker_name_key = "DIALOG_SPEAKER_NARRATOR"
 text_key = "DIALOG_GAR_FINALE_3"
+background = ExtResource("5_8valj")
 
 [sub_resource type="Resource" id="Resource_4pfbb"]
 script = ExtResource("1_fu45y")
 speaker_name_key = "DIALOG_SPEAKER_MOM"
 text_key = "DIALOG_GAR_FINALE_4"
+portrait = ExtResource("6_4pfbb")
 
 [sub_resource type="Resource" id="Resource_5erhv"]
 script = ExtResource("1_fu45y")
 speaker_name_key = "HERO_GAR_CHRISTINA_NAME"
 text_key = "DIALOG_GAR_FINALE_5"
-portrait = ExtResource("3_f7dvw")
+portrait = ExtResource("4_wibhk")
 
 [resource]
 script = ExtResource("4_7mo0j")

@@ -25,7 +25,7 @@ Politur zuletzt. **Owner:** 🤖 Claude (Code/Tests/Docs) · 🧑 Sebastian (Bil
 - [x] 🤖 Phase 4 — Post-Dialoge, Abspann-Szene
 - [x] 🤖 Phase 5 — `BalanceConfig` + `docs/BALANCING.md`; Erstbalance per Bot (L1 10/10, L2 8/10, L3 7/10 Blüten)
 - [x] 🤖 Bild-Pipeline: Prompts in `ASSETS.md`, Freistell-Plugin `addons/chroma_key`, `tools/art.sh` (Freistellen, Iso-Kacheln, App-Icon, Dialog-Hintergründe, HUD-Icons)
-- [ ] 🧑 Bilder nach `ASSETS.md` generieren → `art_raw/` → `bash tools/art.sh`
+- [x] 🧑 Bilder nach `ASSETS.md` generieren → `art_raw/` → `bash tools/art.sh` (35 Bilder eingespielt; Boden-Kacheln verworfen → Platzhalter-Tileset)
 - [ ] 🧑 Story-Entwurf in `STORY.md` prüfen, Geburtstagsgruß (`CREDITS_LINE_2..4`) schreiben
 - [ ] 🧑 Playtest am PC und auf dem Handy → 🤝 Balancing nachziehen
 - [ ] 🤖 Windows-.exe + Android-APK bauen, auf dem Handy testen

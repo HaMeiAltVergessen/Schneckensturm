@@ -6,7 +6,8 @@
 #   --anchor center|bottom
 #   --key #ff00ff      key colour (default: auto-detect from the border)
 #   --tolerance 0.22   --feather 0.14   --margin 8
-#   --no-trim          keep the original framing   --shared-trim  crop all files with one frame
+#   --holes            also key enclosed background areas (bow string, branches)
+#   --no-trim         keep the original framing   --shared-trim  crop all files with one frame
 #   --cover WxH        no keying, scale+crop to fill (backgrounds)
 extends SceneTree
 
@@ -31,7 +32,7 @@ func _initialize() -> void:
 		var tol := float(opt.get("tolerance", ChromaKey.DEFAULT_TOLERANCE))
 		var fea := float(opt.get("feather", ChromaKey.DEFAULT_FEATHER))
 		for i in imgs.size():
-			imgs[i] = ChromaKey.key(imgs[i], key_col, tol, fea)
+			imgs[i] = ChromaKey.key(imgs[i], key_col, tol, fea, true, opt.has("holes"))
 	var shared := ChromaKey.union_rect(imgs) if opt.has("shared-trim") else Rect2i()
 	var size := _size(str(opt.get("size", "")))
 	var anchor := ChromaKey.Anchor.BOTTOM if str(opt.get("anchor", "")) == "bottom" else ChromaKey.Anchor.CENTER
